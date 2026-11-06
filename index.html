@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bicher Insurance Broker – Sito in costruzione</title>
+  <meta name="description" content="Il nuovo sito di Bicher Insurance Broker è in costruzione. Contattaci al 035 046 20 37 o a info@bicher.it.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="logo-bicher.png">
+  <style>
+    :root {
+      --bg: #f3f7fa;
+      --card: #ffffff;
+      --line: #e2e9ef;
+      --ink: #12324d;
+      --text: #1d3a55;
+      --muted: #5f6f7d;
+      --brand: #2c74b3;
+      --brand-dark: #225f96;
+      --accent: #3fb0dc;
+      --grad: linear-gradient(90deg, #6cc6e2 0%, #3a8fcb 45%, #2c74b3 70%, #1f4597 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 10px;
+      background: var(--grad);
+      z-index: 10;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: 100%;
+      max-width: 1408px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 62px 0 0 22px;
+    }
+    .logo img {
+      display: block;
+      width: 322px;
+      max-width: 100%;
+      height: auto;
+    }
+    .header-mail {
+      font-size: 18px;
+      color: var(--ink);
+      padding-bottom: 5px;
+      border-bottom: 1.5px solid #9cc3e3;
+      transition: border-color .2s, color .2s;
+    }
+    .header-mail:hover { color: var(--brand); border-color: var(--brand); }
+
+    /* Card */
+    .card {
+      margin-top: 106px;
+      background:
+        radial-gradient(ellipse 55% 75% at 100% 0%, rgba(201, 232, 248, .75) 0%, rgba(225, 242, 251, .45) 40%, rgba(255, 255, 255, 0) 75%),
+        var(--card);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: 0 30px 80px -30px rgba(18, 50, 77, .14), 0 4px 18px rgba(18, 50, 77, .04);
+      overflow: hidden;
+    }
+    .card-main { padding: 70px 72px 56px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin-top: 32px;
+      font-size: clamp(38px, 5.6vw, 70px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+    }
+
+    .lead {
+      margin-top: 36px;
+      max-width: 730px;
+      font-size: 20px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 26px;
+      margin-top: 36px;
+      padding: 22px 29px;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      box-shadow: 0 8px 22px -10px rgba(44, 116, 179, .7);
+      transition: background .2s, transform .2s;
+    }
+    .btn:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn svg { width: 20px; height: 20px; }
+
+    /* Contacts */
+    .contacts {
+      display: grid;
+      grid-template-columns: 465px 395px 1fr;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 44px 72px 56px;
+    }
+    .label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .value {
+      margin-top: 22px;
+      font-size: 21px;
+      line-height: 1.72;
+      color: var(--ink);
+    }
+    .value a:hover { color: var(--brand); }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 40px 0 26px;
+      font-size: 14px;
+      line-height: 2;
+      color: var(--muted);
+    }
+    .footer strong { font-weight: 600; color: #4b5b69; }
+
+    main { flex: 1; }
+
+    @media (max-width: 1100px) {
+      .contacts { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    }
+
+    @media (max-width: 760px) {
+      .wrap { padding: 0 16px; }
+      .header { padding: 40px 4px 0; }
+      .logo img { width: 200px; }
+      .header-mail { font-size: 15px; }
+      .card { margin-top: 48px; border-radius: 22px; }
+      .card-main { padding: 44px 26px 40px; }
+      .eyebrow { font-size: 12px; letter-spacing: .18em; }
+      h1 { margin-top: 24px; }
+      .lead { font-size: 17px; line-height: 1.75; margin-top: 24px; }
+      .contacts { grid-template-columns: 1fr; gap: 30px; padding: 36px 26px 40px; }
+      .value { margin-top: 10px; font-size: 18px; }
+      .footer { flex-direction: column; gap: 12px; padding-top: 28px; }
+    }
+
+    @media (max-width: 420px) {
+      .header-mail { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="header">
+      <a class="logo" href="/" aria-label="Bicher Insurance Broker">
+        <img src="logo-bicher.png" alt="Bicher Insurance Broker" width="1730" height="523">
+      </a>
+      <a class="header-mail" href="mailto:info@bicher.it">info@bicher.it</a>
+    </header>
+
+    <section class="card">
+      <div class="card-main">
+        <p class="eyebrow">Il nostro sito si rinnova</p>
+        <h1>Presto online.<br>Siamo già a tua disposizione.</h1>
+        <p class="lead">Il nuovo sito di Bicher Insurance Broker è in costruzione. Per informazioni e richieste, puoi contattarci telefonicamente o via email.</p>
+        <a class="btn" href="mailto:info@bicher.it">
+          Scrivici
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+            <path d="M3 17L17 3M8 3h9v9"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="contacts">
+        <div>
+          <p class="label">Sede legale</p>
+          <p class="value">Via Giorgio e Guido Paglia, 17<br>24122 Bergamo (BG)</p>
+        </div>
+        <div>
+          <p class="label">Telefono</p>
+          <p class="value"><a href="tel:+390350462037">035 046 20 37</a></p>
+        </div>
+        <div>
+          <p class="label">Email</p>
+          <p class="value"><a href="mailto:info@bicher.it">info@bicher.it</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <strong>Bicher Insurance Broker S.r.l.</strong><br>
+        P. IVA e C.F. 01879080099 · REA BG – 498097<br>
+        Iscrizione RUI B000729700
+      </div>
+      <div>Sito in costruzione</div>
+    </footer>
+  </main>
+</body>
+</html>
